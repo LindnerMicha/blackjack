@@ -18,6 +18,7 @@ state = " "
 sys_font15 = pygame.font.SysFont(None, 15)
 sys_font22 = pygame.font.SysFont(None, 22)
 sys_font30 = pygame.font.SysFont(None, 30)
+sys_font44 = pygame.font.SysFont(None, 44)
 sys_font60 = pygame.font.SysFont(None, 60)
 #endregion
 
@@ -98,8 +99,8 @@ def draw_text(text, sys_font15, color, screen, x , y):
     textrect.topleft = (x, y)
     screen.blit(textobj, textrect)
 
-card_x = 130
-card_y = 220
+card_x = 70
+card_y = 110
 
 
 cards = [
@@ -136,7 +137,7 @@ while runtime:
             runtime = False
 
 
-    pygame.draw.rect(screen, (255, 0, 0), [250, 50, card_x, card_y])
+    pygame.draw.rect(screen, (255, 0, 0), [150, 50, card_x, card_y])
     button("Neue Karte", 1000, 20, 150, 70, (255, 255, 255), (255, 225, 255), sys_font30)
     button("Hit", 50, 800, 150, 70, (255, 255, 255), (255, 225, 255), sys_font30)
     button("Clear", 450, 800, 150, 70, (255, 255, 255), (255, 225, 255), sys_font30)
@@ -144,14 +145,14 @@ while runtime:
     play_card_x = 50
     play_card_y = 400
     for i in range(len(play_cards)):
-        card(cards[play_cards[i]][0], play_card_x, play_card_y, card_x, card_y, cards[r_int][2], cards[r_int][3], sys_font60)
-        play_card_x += 200
+        card(cards[play_cards[i]][0], play_card_x, play_card_y, card_x, card_y, cards[r_int][2], cards[r_int][3], sys_font44)
+        play_card_x += 100
 
     bank_card_x = 50
     bank_card_y = 50
     for i in range(len(bank_cards)):
-        card(cards[bank_cards[i]][0], bank_card_x, bank_card_y, card_x, card_y, cards[r_int][2], cards[r_int][3], sys_font60)
-        bank_card_x += 200
+        card(cards[bank_cards[i]][0], bank_card_x, bank_card_y, card_x, card_y, cards[r_int][2], cards[r_int][3], sys_font44)
+        bank_card_x += 100
 
 
     draw_text(f"Val Player: {value_player}", sys_font30, (255, 255, 255), screen, 50, 700)
